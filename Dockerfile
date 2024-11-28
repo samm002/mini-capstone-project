@@ -16,5 +16,9 @@ COPY . .
 # Expose port
 EXPOSE 3000
 
+# Executing sequelize migrations
+RUN chmod +x /usr/src/app/docker-entrypoint.sh
+ENTRYPOINT ["/usr/src/app/docker-entrypoint.sh"]
+
 # Start the server
 CMD [ "npm", "start" ]
